@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "mock data for unit testing",
+    "body": "if i could turn back time...if i could find a way.",
+    "time": "1990-12-13 15:23:56"
+  },
+  {
+    "id": 2,
+    "title": "another sample of mock data",
+    "body": "Gotta get back in time..Get me back in time",
+    "time": "1990-12-15 15:23:56"
+  }
+]

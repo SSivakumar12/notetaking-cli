@@ -2,6 +2,8 @@ use clap::{Parser, Subcommand};
 use std::io::{self};
 mod utils;
 
+const FILE_PATH: &'static str = "notes.json";
+
 #[derive(Parser)]
 //#[command(author, version, about)]
 struct Cli {
@@ -30,10 +32,10 @@ fn main() -> io::Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Add { title, body } => utils::add_note(title, body)?,
-        Commands::Remove { id } => utils::remove_note(id)?,
-        Commands::Modify { id, title, body } => utils::modify_note(id, title, body)?,
-        Commands::List => utils::list_notes(),
+        Commands::Add { title, body } => utils::add_note(title, body, FILE_PATH)?,
+        Commands::Remove { id } => utils::remove_note(id, FILE_PATH)?,
+        Commands::Modify { id, title, body } => utils::modify_note(id, title, body, FILE_PATH)?,
+        Commands::List => utils::list_notes(FILE_PATH),
     }
     Ok(())
 }
